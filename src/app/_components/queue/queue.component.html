@@ -1,0 +1,14 @@
+<a *ngIf="moviesFromQueue!=undefined">
+<br>
+<h1 class="md-title text-center"> You have {{moviesInQueueNumber}} movies in queue </h1>
+
+<br>
+<br>
+<div class="container">
+    <div class="row equal">
+        <div *ngFor="let movie of moviesFromQueue" class="col-sm-4 py-4">
+            <app-queue-movie-card [movieFromQueue]="movie"></app-queue-movie-card>
+        </div>
+    </div>
+</div>
+</a>

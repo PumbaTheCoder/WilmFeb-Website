@@ -1,0 +1,34 @@
+<a *ngIf="friend!=undefined">
+  <br>
+  <br>
+<div class="card " (click)="goToUser()">
+  <img [src]="randomAvatar" alt="avatar" class="img-thumbnail">
+    <div class="card-body">
+      <div class="container">
+          <div class="row">
+
+            <div class="col">     
+              <a class="block"> 
+                <br>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <span class="log-ema">Login:</span> 
+                <span class="log-ema-login"> {{friend.login}}</span>
+                <br>
+                <br>
+                <span class="log-ema">Email:</span> 
+                <span class="log-ema-email"> {{friend.email}}</span>
+                <br>
+                <br>
+                <span class="log-ema">Watched movies:</span> 
+                <span class="log-ema-email"> {{watchedNumber}} </span>
+              </a>
+            </div>
+        
+          </div>
+      </div>
+  </div>
+</div>
+</a>

@@ -1,0 +1,75 @@
+<br>
+<br>
+<a *ngIf="userProfile!=undefined">
+
+<div class="container">
+        <div class="card flex-row flex-wrap">
+            <div class="card-header border-0">
+                <img [src]="randomAvatar" alt="">
+            </div>
+            <div class="card-block px-2">
+                <br>
+                <a class="card-text">
+                    <span class="infoSpan">Login: </span>
+                    <span class="infoSpanAtr">{{searchedLogin}}@email.com</span>
+                </a>
+                <br>
+                <br>
+                <a class="card-text">
+                    <span class="infoSpan">Email: </span>
+                    <span class="infoSpanAtr">{{searchedLogin}}@email.com</span>
+                </a>
+                <br>
+                <br>
+                <a class="card-text">
+                    <span class="infoSpan">Watched movies: </span>
+                    <span class="infoSpanAtr">{{watchedMoviesNumber}}</span>
+                </a>
+                <br>
+                <br>
+                <br>
+
+                <div *ngIf="isAFriend; else isNotAFriend2">
+                        <a class="card-text" > 
+                            <span class="isAFriendCSS">Friend</span>
+                        </a>
+                </div>    
+
+                    <ng-template #isNotAFriend2>
+                        <div *ngIf="itIsMe" class="isAFriendCSS">
+                            <img class="img-left" src="{{itIsMeImg}}" width="200" height="96" />
+                        </div>
+        
+                        <div *ngIf="!itIsMe" class="card-text">
+                            <button type="button" class="btn btn-secondary btn-lg" (click)="addFriend()" >Add friend</button>
+                        </div>
+                    </ng-template>
+            </div>
+            <div class="w-100"></div>
+        </div>
+</div>
+
+<br>
+<br>
+
+<div *ngIf="watchedMoviesNumber > 0">
+    <div class="block">
+        <span class="underlineComp">
+            <h2>
+                Watched movies by {{searchedLogin}}:
+            </h2>
+        </span>
+    </div>
+
+  <br>
+  <div class="block">
+      <div class="row equal">
+          <div *ngFor="let movie of userProfile" class="col-sm-4 py-4">
+              <app-friend-movie-card [watchedMovies]="movie"></app-friend-movie-card>
+          </div>
+      </div>
+  </div>
+</div>
+
+</a>
+  

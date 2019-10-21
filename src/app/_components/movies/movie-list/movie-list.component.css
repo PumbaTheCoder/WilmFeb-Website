@@ -1,0 +1,11 @@
+.equal {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-end;
+}
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}
+

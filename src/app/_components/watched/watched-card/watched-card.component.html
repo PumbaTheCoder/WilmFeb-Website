@@ -1,0 +1,25 @@
+<br>
+<br>
+  <div class="card text-white bg-dark mb-3 h-100" >
+      <!--<div class="container-fluid" style="border:4px solid #a30101;"> -->
+
+        <ngb-rating [(rate)]="watchedMovies.mark" max="5" tabindex="0" [readonly]="true" >
+            <ng-template let-fill="fill" tabindex="0" >
+                <span class="star" [class.filled]="fill === 100" tabindex="0">&#9733;</span>
+            </ng-template>
+    </ngb-rating>
+
+      <div class="card-header">
+          <img class="card-img-top" src="{{watchedMovies.image}}" alt="{{watchedMovies.title}}"
+            routerLinkActive="active" [routerLink]="['/movies/', watchedMovies.idMovie]">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" routerLinkActive="active" [routerLink]="['/movies/', watchedMovies.idMovie]">{{watchedMovies.title}}</h5>
+        <p class="card-text">{{watchedMovies.description}}</p>
+
+        
+
+      </div>
+   <!-- </div>-->
+   
+</div>

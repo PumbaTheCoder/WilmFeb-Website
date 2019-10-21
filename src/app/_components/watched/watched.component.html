@@ -1,0 +1,29 @@
+<a *ngIf="watchedMovies!=undefined">
+  <br>
+
+  
+  
+
+  <div *ngIf="watchedMoviesNumber > 0; else zeroWatchedMovies">
+    <a class="container text-right" > 
+        <h1 class="md-title text-center"> You have already seen {{watchedMoviesNumber}} movies</h1>    
+    </a>
+</div>  
+
+<ng-template #zeroWatchedMovies>
+    <a class="container text-right" > 
+        <h1 class="md-title text-center"> You have seen 0 movies</h1>    
+    </a>
+</ng-template>
+
+  <br>
+  <br>
+  <div class="container">
+      <div class="row equal">
+          <div *ngFor="let movie of watchedMovies" class="col-sm-4 py-4">
+              <app-watched-card [watchedMovies]="movie"></app-watched-card>
+          </div>
+      </div>
+  </div>
+  </a>
+  

@@ -1,0 +1,20 @@
+.card-header{
+    font-weight: bold;
+    font-size: 120%;
+    background-color: rgb(212, 204, 204);
+}
+
+.card-body{
+    background-color: rgb(233, 229, 229);
+}
+
+.clickLogin{
+    cursor: pointer;
+    font: bold;
+    font-size: 150%;
+}
+
+.clickLogin:hover span{
+    text-decoration: underline;
+    
+}

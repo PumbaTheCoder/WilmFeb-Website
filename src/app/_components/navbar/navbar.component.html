@@ -1,0 +1,78 @@
+
+  <!-- Dla niezalogowanego -->
+
+  <div *ngIf='!loggedIn2()'>
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-text">Wilmfeb</span>
+
+    <div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="comMod"  name="coolName" [(ngModel)]="searchStr"> 
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="goToSearchComponent()">Search</button>
+        </form>
+    </div>
+  <form *ngIf='!loggedIn()' class="navbar-form navbar-right">
+      <div *ngIf='!loggedIn()' class="form-group">
+          <input type="text" placeholder="Login" class="form-control" required name="username" [(ngModel)]="model.Login">       
+      </div>
+
+      <div *ngIf='!loggedIn()' class="form-group">
+          <input type="password" placeholder="Password" class="form-control" required name="password" [(ngModel)]="model.Password">    
+      </div>
+
+      <div *ngIf='!loggedIn()'class="text-right">
+        <button class="btn btn-outline-success mr-sm-2" (click)="login()" [routerLink]="['/movies']" >Sign in</button>    
+        <button class="btn btn-outline-success my-2 my-sm-0" routerLinkActive="active" [routerLink]="['/register']">Register</button>    
+      </div>
+  </form>
+</nav>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <li routerLinkActive="active">
+            <a class="nav-item nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li routerLinkActive="active">
+            <a class="nav-item nav-link" [routerLink]="['/movies']">Movies</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!-- ================================================================================================== -->
+
+
+  <div *ngIf='loggedIn2()'  > 
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-text">Wilmfeb</span>
+    <div>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search movie title" aria-label="Search" ng-model="comMod" name="coolName" [(ngModel)]="searchStr"> 
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="goToSearchComponent()">Search</button>
+            <!--<button  class="btn btn-outline-success my-2 my-sm-0" routerLinkActive="active" [routerLink]="['/search/'+searchStr, searchStr]">Search</button>-->
+        </form>
+    </div>
+    <div>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success mr-sm-2" type="submit" (click)="logout()">Logout</button>
+      </form>
+    </div>
+  </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand">{{userLogin}}</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/movies']">Movies</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/watched']">Watched</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/queue']">Queue</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/recommended']">Recommended</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/friends']">Friends</a>
+            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/searchUser']">Find user</a>
+          </div>
+        </div>
+    </nav>
+</div>
+

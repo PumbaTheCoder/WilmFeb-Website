@@ -1,0 +1,58 @@
+.star {
+    display: flex;
+    font-size: 280%;
+    color: #8f8f8f;
+    margin-left: 10%; 
+    position: relative;
+    outline: none;
+  }
+  .filled {
+    color: #f8d301;
+    outline: none;
+  }
+  
+  .ngb-rating{
+    display: flex;
+    position: relative;
+  }
+
+
+
+  img{
+    transform: scale(1, 1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.card:hover img{
+  transform: scale(1.1, 1.1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  opacity: 0.7; 
+}
+
+.card:hover {
+  border:6px solid #4e4b4b;
+}
+
+.card{
+  border:6px solid #9e9e95;
+  background-color: rgb(216, 216, 240);
+}
+
+.card .container{
+  background-color: rgb(216, 216, 240);
+}
+
+.container{
+    overflow: hidden;
+}
+
+img {
+  cursor: pointer;
+}
+
+h3:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}

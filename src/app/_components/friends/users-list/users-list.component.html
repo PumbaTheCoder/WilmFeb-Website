@@ -1,0 +1,45 @@
+<a *ngIf="friends!=undefined">
+<br>
+  <div class="container">
+
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="50" >
+          <ng-template #rt let-r="result" let-t="term">
+              <ngb-highlight [result]="r.login" [term]="t"></ngb-highlight>
+            </ng-template>
+            
+            <!--<label for="typeahead-template">Search for user:</label>-->
+            <input id="typeahead-template" 
+              type="text" 
+              class="form-control" 
+              [(ngModel)]="model" 
+              [ngbTypeahead]="search" 
+              [resultTemplate]="rt"
+              [inputFormatter]="formatter"
+              placeholder="Search user login" />
+              <br>
+              <!--<div class="al-right">
+                  <button type="button" class="btn btn-secondary btn-lg" >Find user</button>
+              </div>
+              -->
+            <pre>
+              <a *ngIf="model!=undefined && model.email!=undefined"  >
+                    <div class="block">
+                        <app-friend-info-card class="cardSelected" width="100" [friend]="model"></app-friend-info-card>
+                    </div>
+              </a>
+            </pre>
+          <br>
+          <br>
+          <br>
+      </div>
+  </div>
+  
+  <div class="block">
+      <div class="row equal">
+          <div *ngFor="let friend of friends" class="col-sm-4 py-1">
+              <app-friend-info-card [friend]="friend"></app-friend-info-card>
+          </div>
+      </div>
+  </div>
+  
+</a>

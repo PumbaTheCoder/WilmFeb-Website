@@ -1,0 +1,22 @@
+
+<div class="panel panel-default">
+  <div class="panel-body ">
+    
+    <img class="card-img-top" src="{{movie.image}}" alt="{{movie.title}}"
+         routerLinkActive="active" [routerLink]="['/movies/', movie.idMovie]">
+      
+      <div class="card-body">
+        <h4 class="card-title" routerLinkActive="active" [routerLink]="['/movies/', movie.idMovie]">{{movie.title}} ({{movie.year}})</h4>
+        <a class="category-bold"> Director: </a>
+        <a class="card-title">{{movie.director}}</a>
+        <br>
+        <a class="category-bold"> Category: </a>
+        <a *ngFor="let cat of movie.movieCategories" class="card-text">{{cat.category}}, </a>
+        <br>
+        <a class="description-bold"> Description: </a>
+        <a class="card-text">{{movie.description}}</a>
+
+      </div>
+  </div>
+</div>
+

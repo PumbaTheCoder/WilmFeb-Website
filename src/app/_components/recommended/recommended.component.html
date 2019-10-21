@@ -1,0 +1,15 @@
+<a *ngIf="recommendedMovies!=undefined">
+    <br>
+    <h1 class="md-title text-center"> Recommended movies for You: </h1>
+    
+    <br>
+    <br>
+    <div class="container">
+        <div class="row equal">
+            <div *ngFor="let movie of recommendedMovies" class="col-sm-4 py-4">
+                <app-movie-card [movie]="movie"></app-movie-card>
+            </div>
+        </div>
+    </div>
+    </a>
+    

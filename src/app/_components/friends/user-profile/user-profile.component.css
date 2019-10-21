@@ -1,0 +1,112 @@
+.infoSpan{
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.infoSpanAtr{
+    font-weight: solid;
+    font-size: 200%;
+}
+
+.btn{
+    position: relative;
+    left: 56%; 
+
+}
+
+.isAFriendCSS{
+    color: rgba(17, 153, 4, 0.904);
+    font-weight: bold;
+    font-size: 300%;
+    left: 56%;   
+    position: relative;
+}
+
+.loginColor{
+    color: blue;
+    font-weight: bold;
+
+    justify-content: left;
+    display: flex;
+}
+.watchedSpan{
+
+    justify-content: left;
+    display: flex;
+}
+
+.buttonAddFriend{
+
+    justify-content: right;
+    display: flex;
+}
+
+.container .row{
+    justify-content:center;
+}
+
+.block {
+    border-bottom: 3px solid #090627;
+}
+
+.container .col-4{
+    border: 6px solid #000000;
+    border-right: 3px solid #000000;
+    min-width: 300px;
+}
+
+.container .col-2{
+    border: 6px solid #000000;
+    border-left: 3px solid #000000;
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.container .button{
+    text-align: center;
+}
+
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    
+  }
+
+h3{
+    font-weight: bold;
+    font-size: 240%;
+}
+
+.right-corcer{
+    position: relative;
+    transform: translate(85%);
+    
+}
+
+.container .block{
+    width: 70%;
+    position: relative;
+    transform: translate(25%);
+
+}
+.span4 img {
+    position: relative;
+
+    transform: translate(-100%);
+}
+.span4 .img-left {
+    float: left;
+}
+.span4 .img-right {
+    float: right;
+}
+
+h3{
+    font-weight: bold;
+    font-size: 240%;
+}

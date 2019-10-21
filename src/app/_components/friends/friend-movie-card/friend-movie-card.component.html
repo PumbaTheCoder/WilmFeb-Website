@@ -1,0 +1,42 @@
+<div class="card w-150 h-100">
+    <div class="card-img-top d-flex align-items-center bg-light ">
+        <div class="container">
+            <div class="row">
+
+              <div class="col-6">     
+                <div>
+                    <img class="img-fluid" src="{{watchedMovies.image}}" alt="{{watchedMovies.title}}"
+                          routerLinkActive="active" [routerLink]="['/movies/', watchedMovies.idMovie]">
+                </div>
+              </div>
+          
+              <div class="col">
+                <h3 routerLinkActive="active" [routerLink]="['/movies/', watchedMovies.idMovie]">
+                  {{watchedMovies.title}} ({{watchedMovies.year}})
+                </h3>
+                <br>
+
+                <ngb-rating [(rate)]="watchedMovies.mark" max="5" tabindex="0" [readonly]="true" >
+                    <ng-template let-fill="fill" tabindex="0" >
+                        <span class="star" [class.filled]="fill === 100" tabindex="0">&#9733;</span>
+                    </ng-template>
+                </ngb-rating>
+
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">
+            <div class="container text-center">
+              <a *ngFor="let cat of watchedMovies.movieCategories" class="card-text">{{cat.category}}, </a>
+              <br>
+            </div>
+        </h4>
+        <h5 class="card-text">{{watchedMovies.description}}</h5>
+    </div>
+</div>
+<br>
+
+
+

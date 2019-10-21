@@ -1,0 +1,13 @@
+<a *ngIf="!haveFriends">
+    <br>
+    <h1 align="center">You do not have friends yet :( </h1>
+</a>
+
+<a *ngIf="friends!=undefined">
+<div class="block">
+    <div class="row equal">
+        <div *ngFor="let friend of friends" class="col-sm-4 py-4">
+            <app-friend-info-card [friend]="friend"></app-friend-info-card>
+        </div>
+    </div>
+</div>

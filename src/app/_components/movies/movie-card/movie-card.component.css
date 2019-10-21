@@ -1,0 +1,56 @@
+
+  div div div .category-bold {
+    font-weight: bold;
+    font-size: 80%;
+  }
+
+  div div div .description-bold{
+    font-weight: bold;
+  }
+
+  .panel-body{
+      padding:5px;
+  }
+
+  .panel-body img {
+      width: 100%;
+  }
+
+  img{
+      transform: scale(1, 1);
+      transition-duration: 500ms;
+      transition-timing-function: ease-out;
+  }
+
+  .panel:hover img{
+    transform: scale(1.1, 1.1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    opacity: 0.7;
+    
+  }
+  
+  .card-img-top{
+    cursor: pointer;
+  }
+
+  .panel-image{
+      overflow: hidden;
+  }
+  
+  h4 {
+    cursor: pointer;
+  }   
+
+  h4:hover {
+    text-decoration: underline;
+  }
+
+  .panel:hover {
+    border:6px solid #000000
+  }
+
+  .panel{
+    overflow: hidden;
+    border:6px solid #ffffff;
+}

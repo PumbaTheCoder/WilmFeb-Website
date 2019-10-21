@@ -1,0 +1,14 @@
+
+.navbar-text{
+    font-size: 3.0em !important;
+    color: rgb(252, 252, 252);
+}
+
+.navbar .form-inline .form-control{
+    width: 25.0em;
+    height: 2.5.0em;
+}
+.navbar .navbar-brand{
+    font-size: 2.0em;
+    color: green;
+}

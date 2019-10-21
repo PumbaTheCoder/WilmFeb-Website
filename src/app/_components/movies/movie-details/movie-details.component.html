@@ -1,0 +1,140 @@
+<br>
+<br>
+<div *ngIf="movieDetail">
+<div class="container">	
+	<div class="block">
+    <!-- dodaje ramke/linie-->
+    <div class="container-fluid" style="border:4px solid #000000;">  
+      <div class="row">       
+            <div class="span4">
+            <img class="img-left" src="{{movieDetail.image}}" width="400" height="500" />
+            <div class="content-heading">     
+                <h3>{{movieDetail.title}} ({{movieDetail.year}})
+                        
+                <div *ngIf="isInQueue; else MovieNotInQueue">
+                    <a class="container text-right" > 
+                        <a class="watWar"><span style="color: rgba(235, 128, 5, 0.904)" text-align="right">Already in Your queue</span></a>
+                    </a>
+                </div>                         
+                <ng-template #MovieNotInQueue>
+                    <a *ngIf="!userMarkChecker" class="container text-right" > 
+                            <button type="button" class="btn btn-secondary btn-lg" (click)="addToQueue()">Add movie to queue</button>
+                    </a>
+                    <a *ngIf="userMarkChecker" class="container text-right" > 
+                            <a class="watWar"><span style="color: rgb(11, 11, 173)" text-align="right">WATCHED</span></a>
+                    </a>
+                </ng-template>
+            </h3>
+            </div>
+          <a class="subtitles">Director: </a>
+          <a class="bigger">{{movieDetail.director}}</a>
+          <br>
+            <a class="subtitles"> Category: </a>
+            <a *ngFor="let cat of movieDetail.movieCategories" class="card-text">{{cat.category}}, </a>
+          <br>
+          <br>
+          <a class="subtitles">Description: </a>
+          <a class="bigger">{{movieDetail.description}}</a>
+  
+          <br>
+          <br>
+          <br>
+
+          <div class="container">
+            <div class="row">
+
+              <div class="col-6">
+                <a class="average-mark-title">Average rate:</a>
+                <br>
+                
+                <a *ngIf="movieDetail.globalMark != 0">
+                    <a class="average-mark">{{movieDetail.globalMark | number : '1.1-1' }}/5</a>
+                </a>
+                <a *ngIf="movieDetail.globalMark == 0">
+                        <a class="unrated"><span style="color: red">Coming soon</span></a>
+                </a>
+
+              </div>
+
+              <div class="col-6">
+                <a class="average-mark-title">Your rate: </a>
+                <br>
+
+                <a *ngIf="movieDetail.userMark != 0">
+                    <a class="average-mark"><span style="color: rgb(4, 117, 4)">{{movieDetail.userMark}}/5</span></a>
+                </a>
+                <a *ngIf="movieDetail.userMark == 0">
+                        <a class="unrated"><span style="color: red">UNRATED</span></a>
+                </a>
+                
+                <ngb-rating [(rate)]="currentRate" max="5" tabindex="0"  (rateChange)="sendUserMark(currentRate)">
+                        <ng-template let-fill="fill" tabindex="0" >
+                            <span class="star" [class.filled]="fill === 100" tabindex="0">&#9733;</span>
+                        </ng-template>
+                </ngb-rating>
+                    <hr>
+                <br>
+                
+              </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div> 
+</div>
+
+<br>  
+
+<div class="container">
+    <!-- dodaje ramke/linie-->
+    <div class="container-fluid" style="border:2px solid #cecece;">  
+
+        <a class="comments">Trailer:</a>
+
+        <div class="form-row justify-content-center">
+            <div class="resp-container">
+                <iframe class="resp-iframe" [src]="safeTrailerURL" preload=auto allow="encrypted-media" scrolling="no" allowfullscreen ></iframe>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<br>
+
+
+<div class="container">
+    <!-- dodaje ramke/linie-->
+    <div class="container-fluid" style="border:2px solid #cecece;">  
+
+        <div class="row">
+
+        <div class="col-3">
+            <a class="comments"> Comments</a>
+        </div>
+
+        <div class="col-7">
+            <input class="form-control" type="search" placeholder="Write your comment" aria-label="Search" ng-model="comMod" [(ngModel)]="userComment">
+        
+        </div>
+
+        <div class="col-2">
+            <button type="button" class="btn btn-outline-dark btn-lg btn-block" (click)="addComment()">Add</button>
+        </div>
+
+        </div>
+    </div>
+</div>
+<br>
+
+    <div class="container" >
+        <div class="column equal">
+
+            <div  *ngFor="let comment of movieComments" > 
+                <app-movie-comment-card [singleComment]="comment"></app-movie-comment-card>  
+                <br> 
+            </div>
+        </div>
+    </div>
+</div>
